@@ -5,14 +5,15 @@ export const FormField = ({ control, field }: any) => (
   <Controller
     name={field.name}
     control={control}
-    rules={{ required: field.required }}
+    rules={field.rules}
     render={({ field: f, fieldState }: any) => (
       <TextField
         {...f}
         label={field.label}
+        type={field.type}
         fullWidth
         error={!!fieldState.error}
-        helperText={fieldState.error ? "Required" : ""}
+        helperText={fieldState.error?.message || ""}
       />
     )}
   />

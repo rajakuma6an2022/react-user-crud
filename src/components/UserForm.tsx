@@ -18,6 +18,7 @@ export default function UserForm({
 }: any) {
   const { handleSubmit, control, reset } = useForm({
     defaultValues: EMPTY_FORM,
+    mode : "onChange"
   });
 
   useEffect(() => {
